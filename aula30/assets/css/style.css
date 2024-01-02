@@ -1,0 +1,19 @@
+:root{
+    background-color: aqua;}
+
+    .container{
+        max-width: 800px;
+        margin: 100px auto;
+        background-color: rgb(83, 25, 25);
+        padding: 30px ;
+        border-radius: 20px;
+        color: rgb(138, 219, 26);
+       
+        
+    }
+
+h1{text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, '--primary-colo-darker New Roman', Times, serif;
+   display: block;
+   border-radius: 20px solid red;
+}

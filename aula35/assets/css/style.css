@@ -1,0 +1,17 @@
+:root {
+background-color: aqua;
+}
+
+/* 
+    box-sizing: border-box;
+    outline: 0;
+    border-radius: 20px;
+    height:50px; */
+bodoy{
+    display: block;
+    background-color: bisque;
+    width: 400px;
+    padding: 50px;
+}
+
+

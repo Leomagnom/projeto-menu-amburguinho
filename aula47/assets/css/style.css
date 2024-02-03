@@ -7,3 +7,41 @@
 .relogio{
     font-size: 3em;
 }
+
+.container{
+    
+    display: block;
+    width: 500px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    margin:5% 30%;
+    background-color: white;
+}
+h1{ background-color: white;
+    margin-bottom: 0px;
+    margin-top: -10px;
+    margin-bottom: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Times, serif;
+    font-size:30px;
+
+}
+.relogio{
+    font-size: 60px;
+}
+
+ p{
+    background-color:white ;
+     margin-bottom: -20px; 
+}
+
+button {
+    background: white;
+    border: 1px solid black;
+    padding: 2px;
+    margin-top: 70px;
+    padding: 5px;
+    border-radius: 0px;
+    
+}

@@ -2,7 +2,7 @@
     const data = new Date(segundos * 1000);
     return data.toLocaleTimeString('pt-BR', {
         hour12: false,
-        timeZone:'UTC' //GMC ou UTC, e colocardo aqui.
+        timeZone:'UTC' //GMC ou UTC, e colocado aqui.
     });
  }
 // console.log(criaHoraDosSegundos(10));
@@ -21,13 +21,19 @@
    },1000)
   }
 
+  document.addEventListener('click', function(e) {
+   const el = e.target;
+  }) 
+
  iniciar.addEventListener('click', function(event){
+   relogio.classList.remove('pausado');
    clearInterval(timer);
     iniciaRelogio();
  });
 
  pausar.addEventListener('click', function(event){
     clearInterval(timer);
+    relogio.classList.add('pausado');
  });
 
  zerar.addEventListener('click', function(event){

@@ -38,13 +38,18 @@
 //     console.log(operador, acumulador, numeros);
 //  }conta('+', 0, [20, 30, 40, 50]);
 
-function conta(operador, acumulador, ...numeros){//-> os (...) são chamados Hash operator
- for(let numero of numeros) {
-    if (operador === '+') acumulador += numero;
-    if (operador === '-') acumulador -= numero;
-    if (operador === '/') acumulador /= numero;
-    if (operador === '*') acumulador *= numero;
- }
- console.log(acumulador);
-}
-conta('-', 200, 20, 30, 40, 50);
+// function conta(operador, acumulador, ...numeros){//-> os (...) são chamados Hash operator
+//  for(let numero of numeros) {
+//     if (operador === '+') acumulador += numero;
+//     if (operador === '-') acumulador -= numero;
+//     if (operador === '/') acumulador /= numero;
+//     if (operador === '*') acumulador *= numero;
+//  }
+//  console.log(acumulador);
+// }
+// conta('*', 1, 20, 30, 40, 50);
+
+const conta = (...args) => {
+   console.log(args);
+};
+conta('+', 1, 20, 30, 40, 50);

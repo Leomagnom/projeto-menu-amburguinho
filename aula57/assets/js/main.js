@@ -3,12 +3,10 @@ function criaCalculatora() {
         display: document.querySelector('.display'), 
         inicia() {
            this.cliqueBotoes();
-           this.pressionaEnter();
-           this.display.focus();
+           this.pressionaEnter();      
      }, 
 
-      pressionaEnter(){
-         console.log()
+      pressionaEnter() {
       this.display.addEventListener('keyup', e => {
         if (e.KeyCode === 13) {
             this.realizaConta();
@@ -68,9 +66,9 @@ function criaCalculatora() {
          this.resolveDisplay()
       }
      
-         this.display.focus();
-
-     });
+      this.display.focus();
+      
+   });
     },
     
     btnParaDisplay(valor) {

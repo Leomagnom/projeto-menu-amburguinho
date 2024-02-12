@@ -1,14 +1,15 @@
 function criaCalculatora() {
     return {
         display: document.querySelector('.display'), 
-
         inicia() {
            this.cliqueBotoes();
            this.pressionaEnter();
+           this.display.focus();
      }, 
 
-     pressionaEnter(){
-      this.display.addEventListener('Keyup', e => {
+      pressionaEnter(){
+         console.log()
+      this.display.addEventListener('keyup', e => {
         if (e.KeyCode === 13) {
             this.realizaConta();
         }
@@ -44,7 +45,7 @@ function criaCalculatora() {
      
      cliqueBotoes() {
         // this -> calculadora
-     document.addEventListener('click', (e) => {
+     document.addEventListener('click', e => {
        const el = e.target;
 
        if(el.classList.contains('btn-num')) {
@@ -59,9 +60,16 @@ function criaCalculatora() {
         this.apagaUm();
        }
 
-       if(el.classList.contains('btn-eq')){
+       if(el.classList.contains('btn-eq',)){
         this.realizaConta();
-       }
+        
+      }
+      if(e.key==='Enter') {
+         this.resolveDisplay()
+      }
+     
+         this.display.focus();
+
      });
     },
     

@@ -21,17 +21,33 @@ this.cor = cor
     this.preco = this.preco + (this.preco * (percentual / 100));
  };
 
-function Caneca(nome, preco, cor, material ) {
-Produto.call(this, nome, preco)
-    this.cor = cor
-    this.material = material
+function Caneca(nome, preco, material, estoque ) {
+Produto.call(this, nome, preco);
+    this.material = material;
+
+
+
+ Object.defineProperty(this, 'estoque', {
+     enumerable: true,
+     configurable: false,
+     get: function() {
+        return estoque;
+     },
+     set: function(valor) {
+        if (typeof valor !== 'number') return;
+        estoque = valor;
+     }
+  });
  }
  Caneca.prototype = Object.create(Produto.prototype);
  Caneca.prototype.constructor = Caneca;
 
- const caneca = new Caneca('Caneca', 9.5, 'Azul', 'plastico');
  const produto = new Produto('Gen', 111);
  const camiseta = new Camiseta('Regata', 7.5, 'Preta');
-console.log(produto);
-console.log(camiseta);
-console.log(caneca);
+ const caneca = new Caneca('Caneca', 13, 'Plástico', 5);
+ caneca.estoque = 100;//-> Aqui estou usando set
+
+ console.log(caneca.estoque);//-> Aqui estou usando get
+ console.log(caneca);
+ console.log(camiseta);
+ console.log(produto);

@@ -1,27 +1,35 @@
-class Pessoa {
-  constructor(nome, sobrenome) {
+//Aqui abaixo tenho uma propriedade Privada.
+const _velocidade = Symbol('velocidade');//Não deixa fazer alteração involuntária.
+class Carro {
+  constructor(nome) {
     this.nome = nome;
-    this.sobrenome = sobrenome;
+    this[_velocidade] = 0;
   }
 
-  falar() {
-   console.log(`${this.nome} está falando.`);
+  set velocidade(valor) {//Aqui esta configurado para acelerar de 0 a 100.
+    if(typeof valor !== 'number') return;
+    if(valor >= 100 || valor <= 0) return;
+    this[_velocidade] = valor;
   }
-  
-  comendo() {
-    console.log(`${this.nome} está comendo.`);
+
+  get velocidade() {
+    return this[_velocidade];// Aqui esta returnando valor real
+
   }
-  
-  bebendo() {
-    console.log(`${this.nome} está bebendo.`);
+  acelerar() {
+    if(this[_velocidade]>= 100) return;
+    this[_velocidade]++;
+  }
+
+  freiar() {
+    if(this[_velocidade] <= 100) return;
+    this[_velocidade]--;
   }
 }
 
-const p1 = new Pessoa('Luiz', 'Miranda');
-const p2 = new Pessoa('Maria', 'Eduarda');
-const p3 = new Pessoa('joana', 'Darque');
-const p4 = new Pessoa('Antonio', 'Fagundes');
-console.log(p1);
-console.log(p2);
-console.log(p3);
-console.log(p4);
+const c1 = new Carro('Fusca');
+for(let i = 0; i <= 200; i++) {//Pra acelerar de 0 a 100, tenho que comentar essa linha.
+  c1.acelerar();
+}
+c1.velocidade = 80;
+console.log(c1.velocidade);

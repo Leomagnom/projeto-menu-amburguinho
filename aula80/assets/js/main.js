@@ -1,20 +1,27 @@
-const pessoas = [
-    {id: 3, nome:'Luiz'},
-    {id: 2, nome: 'Maria'},
-    {id: 1, nome: 'Helena'},
-];
+class Pessoa {
+  constructor(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+  }
 
-// const novasPessoas = {};
-// for (const pessoa of pessoas) {
-//     const { id } = pessoa;
-//     novasPessoas[id] = {...pessoa};
-// }
-
-const novasPessoas = new Map();
-for (const pessoa of pessoas) {
-    const { id } = pessoa;
-    novasPessoas.set(id, {...pessoa});
+  falar() {
+   console.log(`${this.nome} está falando.`);
+  }
+  
+  comendo() {
+    console.log(`${this.nome} está comendo.`);
+  }
+  
+  bebendo() {
+    console.log(`${this.nome} está bebendo.`);
+  }
 }
 
-console.log(novasPessoas);
-// console.log(novasPessoas.get(2));//-Aqui seleciono uma so pessoa.
+const p1 = new Pessoa('Luiz', 'Miranda');
+const p2 = new Pessoa('Maria', 'Eduarda');
+const p3 = new Pessoa('joana', 'Darque');
+const p4 = new Pessoa('Antonio', 'Fagundes');
+console.log(p1);
+console.log(p2);
+console.log(p3);
+console.log(p4);

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.use(express.urlencoded({extended:true}));//->faz o tratamento do body.
+app.use(express.urlencoded({extended:true}));//->faz o tratamento do body
 
 // /profiles/12345? -> parametros de url
 // campanha=googleads & -> curry strings, utilisando express

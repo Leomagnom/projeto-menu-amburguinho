@@ -1,10 +1,8 @@
 const express = require('express');
-const app = express();
+const app = express(); 
 const mongoose = require('mongoose');
-const connectionString = 'mongodb+srv://<username>:<password>@cluster0.lou7htw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0;'
-mongoose.connect(connectionString);
-
-
+const connectionString = 'mongodb+srv://mongodb+srv://Leonardomagno:<password>@cluster0.lou7htw.mongodb.net/BASEDEDADOS?retryWrites=true&w=majority&appName=Cluster0';
+mongoose.connect(connectionString, {});
 
 
 const routes = require('./routes');
